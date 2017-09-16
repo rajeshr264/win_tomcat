@@ -1,7 +1,7 @@
 ---
 win_tomcat::catalina_home: "c:\\tools\\apache-tomcat-%{tomcat_version}"
 #will change the version to be smart enough to know which version is installed and correct the path
-win_tomcat::conffile: "c:\tools\apache-tomcat-%\\{tomcat_version}\\catalina.properties"
+win_tomcat::conffile: "c:\tools\apache-tomcat-%{tomcat_version}\\catalina.properties"
  # "installed" installs the default version, otherwise specify an approved version
 win_tomcat::version: 'installed'
  #double backslash for chocolatey, since it will escape the rest
