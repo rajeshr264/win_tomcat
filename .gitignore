@@ -6,6 +6,7 @@
 /.bundle/
 /.idea/
 /.vagrant/
+/.vscode/
 /coverage/
 /bin/
 /doc/
@@ -19,4 +20,4 @@
 /spec/fixtures/modules/
 /tmp/
 /vendor/
-
+.DS_STORE

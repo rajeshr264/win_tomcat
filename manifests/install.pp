@@ -10,9 +10,8 @@ class win_tomcat::install {
   # Include main class to use its parameters
   include win_tomcat
   package { 'tomcat':
-    ensure   => $win_tomcat::version, # Will install the default, otherwise specify version
+    ensure   => $win_tomcat::version, 
     provider => chocolatey,
-    
     install_options => ['--params', '"', "/installLocation:${$win_tomcat::install_location}", '"'],
   }
 }
