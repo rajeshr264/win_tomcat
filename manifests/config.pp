@@ -8,7 +8,7 @@
 #   include win_tomcat::config
 class win_tomcat::config {
   include win_tomcat
-  file{ $win_tomcat::conffile:
+  file { $win_tomcat::conffile:
     ensure  => file,
     content => epp('win_tomcat/catalina.properties.epp'),
     #basic template file that comes with default install.
