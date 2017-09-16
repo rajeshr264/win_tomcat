@@ -8,7 +8,7 @@
 #   include win_tomcat::service
 class win_tomcat::service {
   include win_tomcat
-  service { "${win_tomcat::majorversion}":
+  service { $win_tomcat::major_version:
     ensure     => running,
   }
 }
