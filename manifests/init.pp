@@ -6,7 +6,12 @@
 #
 # @example
 #   include win_tomcat
-class win_tomcat {
+class win_tomcat (
+  $conffile,
+  $version,
+  $install_location,
+  $major_version,
+) {
   include win_tomcat::install
   include win_tomcat::config
   include win_tomcat::service
