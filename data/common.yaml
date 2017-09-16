@@ -6,4 +6,4 @@ win_tomcat::version: 'installed'
  #double backslash for chocolatey, since it will escape the rest
 win_tomcat::install_location: 'c:\\tools'
 # I want to get the major version of tomcat, basically the first number in the apache_version
-win_tomcat::major_version: "8" 
+win_tomcat::major_version: "Tomcat8" 
