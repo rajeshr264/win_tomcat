@@ -1,5 +1,9 @@
 ---
-win_tomcat::conffile: "c:\tools\apache-tomcat-8.5.12\catalina.properties" #will change the version to be smart enough to know which version is installed and correct the path
-win_tomcat::version: 'installed' # "installed" installs the default version, otherwise specify an approved version
-win_tomcat::install_location: 'c:\\tools' #double backslash for chocolatey, since it will escape the rest
-win_tomcat::major_version: "8" # I want to get the major version of tomcat, basically the first number in the apache_version
+#will change the version to be smart enough to know which version is installed and correct the path
+win_tomcat::conffile: 'c:\tools\apache-tomcat-8.5.12\catalina.properties'
+ # "installed" installs the default version, otherwise specify an approved version
+win_tomcat::version: 'installed'
+ #double backslash for chocolatey, since it will escape the rest
+win_tomcat::install_location: 'c:\\tools'
+# I want to get the major version of tomcat, basically the first number in the apache_version
+win_tomcat::major_version: "8" 
