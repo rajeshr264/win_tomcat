@@ -10,7 +10,7 @@ class win_tomcat::install {
   # Include main class to use its parameters
   include win_tomcat
   if $win_tomcat::version != undef {
-    case $version {
+    case $win_tomcat::version {
       '/7.\d.\d\d': {
         package { 'tomcat':
           ensure          => $win_tomcat::ensure,
@@ -38,4 +38,5 @@ class win_tomcat::install {
         }
       }
     }
+  }
 }
