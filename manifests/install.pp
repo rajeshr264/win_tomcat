@@ -34,7 +34,8 @@ class win_tomcat::install {
     }
       default: {
         package { 'tomcat':
-          ensure => installed,
+          ensure   => installed,
+          provider => chocolatey,
         }
       }
     }
