@@ -9,9 +9,33 @@
 class win_tomcat::install {
   # Include main class to use its parameters
   include win_tomcat
-  package { 'tomcat':
-    ensure          => $win_tomcat::version,
-    provider        => chocolatey,
-    install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_location}", '"'],
-  }
+  if $win_tomcat::version != undef {
+    case $version {
+      '/7.\d.\d\d': {
+        package { 'tomcat':
+          ensure          => $win_tomcat::ensure,
+          provider        => chocolatey,
+          install_options => ['-params', '--version', "${win_tomcat::version}", '"', "unzipLocation=${$win_tomcat::install_location}", '"'],
+        }
+      }
+      '/8.\d.\d\d': {
+        package { 'tomcat':
+          ensure          => $win_tomcat::ensure,
+          provider        => chocolatey,
+          install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_location}", '"'],
+        }
+      }
+      '9.0.0-rc': {
+        package { 'tomcat':
+          ensure          => $win_tomcat::ensure,
+          provider        => chocolatey,
+          install_options => ['-params', '--version', "${win_tomcat::version}", '"', "unzipLocation=${$win_tomcat::install_location}", '"'],
+      }
+    }
+      default: {
+        package { 'tomcat':
+          ensure => installed,
+        }
+      }
+    }
 }
