@@ -9,7 +9,7 @@
 class win_tomcat (
   $conffile,
   $version,
-  $install_location,
+  $install_path,
   $ensure,
 ) {
   include win_tomcat::install

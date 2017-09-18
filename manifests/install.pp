@@ -15,21 +15,21 @@ class win_tomcat::install {
         package { 'tomcat':
           ensure          => $win_tomcat::ensure,
           provider        => chocolatey,
-          install_options => ['-params', '--version', "${win_tomcat::version}", '"', "unzipLocation=${$win_tomcat::install_location}", '"'],
+          install_options => ['-params', '--version', "${win_tomcat::version}", '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
         }
       }
       '/8.\d.\d\d': {
         package { 'tomcat':
           ensure          => $win_tomcat::ensure,
           provider        => chocolatey,
-          install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_location}", '"'],
+          install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
         }
       }
       '9.0.0-rc': {
         package { 'tomcat':
           ensure          => $win_tomcat::ensure,
           provider        => chocolatey,
-          install_options => ['-params', '--version', "${win_tomcat::version}", '"', "unzipLocation=${$win_tomcat::install_location}", '"'],
+          install_options => ['-params', '--version', "${win_tomcat::version}", '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
       }
     }
       default: {
