@@ -12,6 +12,8 @@ class win_tomcat (
   $install_path,
   $ensure,
   $service_name,
+  $version_major,
+  $version_minor,
 ) {
   include win_tomcat::install
   include win_tomcat::config
