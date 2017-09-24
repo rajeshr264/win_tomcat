@@ -20,7 +20,7 @@ class win_tomcat::install {
     package { 'tomcat':
       ensure          => installed,
       provider        => chocolatey,
-      install_options => ['-params', "${win_tomcat::version}", '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
+      install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
     }
   }
 }
