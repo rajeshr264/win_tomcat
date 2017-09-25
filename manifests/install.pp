@@ -10,6 +10,8 @@
 class win_tomcat::install {
   # Include main class to use its parameters
   include win_tomcat
+  #
+  # Notify for testing the version output
   notify { 'tomcatversion':
     message => "${win_tomcat::version}",
   }
