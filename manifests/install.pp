@@ -17,15 +17,15 @@ class win_tomcat::install {
   }
   if $win_tomcat::version == undef {
     package { 'tomcat':
-    ensure          => installed,
-    provider        => chocolatey,
-    install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
+      ensure          => installed,
+      provider        => chocolatey,
+      install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
     }
   } else {
-    package { 'tomcat':
-    ensure          => installed,
-    provider        => chocolatey,
-    install_options => ['--version', "${win_tomcat::version}", '-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
+      package { 'tomcat':
+        ensure          => installed,
+        provider        => chocolatey,
+        install_options => ['--version', "${win_tomcat::version}", '-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
     }
   }
 }
