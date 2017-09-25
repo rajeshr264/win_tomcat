@@ -11,19 +11,19 @@ class win_tomcat::install {
   # Include main class to use its parameters
   include win_tomcat
   notify { 'tomcatversion':
-    message => "$win_tomcat::version",
+    message => "${win_tomcat::version}",
   }
-#  if $win_tomcat::version_major == '7' or '9' {
-#    package { 'tomcat':
-#      ensure          => installed,
-#      provider        => chocolatey,
-#      install_options => ["--version ${win_tomcat::version}", '-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
-#    }
-#  } else {
-#    package { 'tomcat':
-#      ensure          => installed,
-#      provider        => chocolatey,
-#      install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
-#    }
-#  }
+  if $win_tomcat::version == undef {
+    package { 'tomcat':
+    ensure          => installed,
+    provider        => chocolatey,
+    install_options => ['-params', '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
+    }
+  } else {
+    package { 'tomcat':
+    ensure          => installed,
+    provider        => chocolatey,
+    install_options => ['-params', '--version', "${win_tomcat::version}", '"', "unzipLocation=${$win_tomcat::install_path}", '"'],
+    }
+  }
 }
