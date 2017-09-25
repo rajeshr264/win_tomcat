@@ -1,7 +1,7 @@
 ---
 win_tomcat::catalina_home: "c:\\tools\\apache-tomcat-%{tomcat_version}"
 #will change the version to be smart enough to know which version is installed and correct the path
-win_tomcat::conffile: "c:\\tools\\apache-tomcat-%{tomcat_version}\\catalina.properties"
+win_tomcat::conffile: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\catalina.properties"
 # If undef then install latest version.  Otherwise specify a version in the format 'x.x.xx'
 win_tomcat::version: '7.0.69'
 win_tomcat::ensure: installed
