@@ -11,7 +11,7 @@ class win_tomcat::install {
   # Include main class to use its parameters
   include win_tomcat
   notify { 'tomcatversion':
-    message => "$win_tomcat::version",
+    message => "$win_tomcat::version_major",
   }
 #  if $win_tomcat::version_major == '7' or '9' {
 #    package { 'tomcat':
