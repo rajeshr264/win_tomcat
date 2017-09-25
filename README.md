@@ -70,7 +70,7 @@ This has been tested on Windows 2012 R2 and Windows 2016 base installations.
 
 ## Development
 
-Fork it, develop it, push it.  Or just give feedback, you won't hurt my feelings.
+Fork it, develop it, push it.  Or just give feedback, you won't hurt my feelings."
 
 ## Release Notes/Contributors/Etc. **Optional**
 
