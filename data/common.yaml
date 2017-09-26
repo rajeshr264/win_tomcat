@@ -1,10 +1,11 @@
 ---
 win_tomcat::catalina_home: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}"
-win_tomcat::conffile: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\catalina.properties"
-# If undef then install latest version.  Otherwise specify a version in the format 'x.x.xx'
-win_tomcat::version: '7.0.69'
+win_tomcat::catalinaproperties: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\catalina.properties"
+
+#Specify a version in the format 'x.x.xx'. Make sure to set the service name below.
+win_tomcat::version: '8.5.12'
 win_tomcat::ensure: installed
- #double backslash for chocolatey, since it will escape the rest
+# Double backslash for chocolatey, since it will escape the rest
 win_tomcat::install_path: 'c:\\tools'
 # Set the service name here, i.e. Tomcat7, Tomcat8, Tomcat9 
-win_tomcat::service_name: "Tomcat7"
+win_tomcat::service_name: "Tomcat8"

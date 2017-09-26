@@ -12,6 +12,13 @@ class win_tomcat (
   $install_path,
   $ensure,
   $service_name,
+  $tcusersxml,
+  $catalinapolicy,
+  $contextxml,
+  $loggingproperties,
+  $serverxml,
+  $webxml,
+  $catalinaproperties,
 ) {
   include win_tomcat::install
   include win_tomcat::config
