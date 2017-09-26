@@ -33,19 +33,19 @@ class win_tomcat::config {
   }
   # Manage the logging.properties file.  Based on Puppet template.
   # 
-  file { '$win_tomcat::loggingproperties':
+  file { $win_tomcat::loggingproperties:
     ensure  => file,
     content => epp('win_tomcat/logging.properties'),
   }
   # Manage the server.xml file.  Based on Puppet template. 
   #
-  file { '$win_tomcat::serverxml':
+  file { $win_tomcat::serverxml:
     ensure  => file,
     content => epp('win_tomcat/logging.properties'),
   }
   # Manage the server.xml file.  Based on Puppet template. 
   # 
-  file { '$win_tomcat::webxml':
+  file { $win_tomcat::webxml:
     ensure  => file,
     content => epp('win_tomcat/web.xml'),
   }
