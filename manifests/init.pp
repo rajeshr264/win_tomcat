@@ -7,7 +7,6 @@
 # @example
 #   include win_tomcat
 class win_tomcat (
-  $conffile,
   $version,
   $install_path,
   $ensure,
