@@ -22,7 +22,7 @@ class win_tomcat (
   include win_tomcat::install
   include win_tomcat::config
   include win_tomcat::service
-  include win_tomcat::applications
+  include win_tomcat::webapps
 
   Class['win_tomcat::install']
   -> Class['win_tomcat::config']
