@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 **Features**
 
-First release.  Installs tomcat with chocolatey and configures the base server.
+First release.  Installs tomcat with chocolatey and configures the base server. The base server config files are used as Puppet templates.
 
 **Bugfixes**
 

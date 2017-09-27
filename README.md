@@ -15,10 +15,7 @@
 
 ## Description
 
-Installs and configures [Apache Tomcat](https://tomcat.apache.org/) on Windows.  You can specify the major and minor versions (Major 7, 8, 9).  
-
-
-
+Installs and configures [Apache Tomcat](https://tomcat.apache.org/) on Windows.  You can specify the major and minor versions in {module}/data/common.yaml (Major 7, 8, 9).  
 
 Because this module uses Chocolatey to install Tomcat here are the supported versions.
 
@@ -74,4 +71,4 @@ Fork it, develop it, push it.  Or just give feedback, you won't hurt my feelings
 
 ## Release Notes/Contributors/Etc. **Optional**
 
-If you aren't using changelog, put your release notes here (though you should consider using changelog). You can also add any additional sections you feel are necessary or important to include here. Please use the `## ` header. 
+ 
