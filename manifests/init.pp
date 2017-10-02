@@ -18,6 +18,7 @@ class win_tomcat (
   $serverxml,
   $webxml,
   $catalinaproperties,
+  $sample_app_src,
 ) {
   include win_tomcat::install
   include win_tomcat::config
