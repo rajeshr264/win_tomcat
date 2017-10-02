@@ -14,8 +14,8 @@ class win_tomcat::webapps {
     source => $win_tomcat::sample_app_src,
   }
   # Sample Web Application, using a direct URL
-  file { "${win_tomcat::catalina_home}\\webapps\\howl-logger":
+  file { "${win_tomcat::catalina_home}\\webapps\\log4j":
     ensure => file,
-    source => 'https://repo1.maven.org/maven2/howl/howl-logger/0.1.11/howl-logger-0.1.11.jar',
+    source => 'https://repo1.maven.org/maven2/log4j/log4j/1.2.17/log4j-1.2.17.jar',
   }
 }
