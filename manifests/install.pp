@@ -10,17 +10,9 @@
 class win_tomcat::install {
   # Include main class to use its parameters
   include win_tomcat
-  if $win_tomcat::version == undef {
     package { 'tomcat':
       ensure          => $win_tomcat::ensure,
       provider        => chocolatey,
-      install_options => ['-params', '"', "unzipLocation=${win_tomcat::install_path}", '"'],
+      install_options => ['--version', "${win_tomcat::version}", '-params', '"', "unzipLocation=${win_tomcat::install_path}", '"'],
     }
-  } else {
-      package { 'tomcat':
-        ensure          => $win_tomcat::ensure,
-        provider        => chocolatey,
-        install_options => ['--version', "${win_tomcat::version}", '-params', '"', "unzipLocation=${win_tomcat::install_path}", '"'],
-    }
-  }
 }
