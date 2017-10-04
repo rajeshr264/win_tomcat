@@ -14,8 +14,8 @@ class win_tomcat::webapps {
     source => $win_tomcat::sample_app_src,
   }
   # Sample Web Application, using a direct URL
-  file { "${win_tomcat::catalina_home}\\webapps\\sample_apcera.war":
-    ensure => file,
-    source => 'https://github.com/apcera/sample-apps/raw/master/example-java-war/sample.war',
-  }
+  #file { "${win_tomcat::catalina_home}\\webapps\\sample_apcera.war":
+  #  ensure => file,
+  #  source => 'https://github.com/apcera/sample-apps/raw/master/example-java-war/sample.war',
+  #}
 }
