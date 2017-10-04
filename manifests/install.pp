@@ -8,11 +8,9 @@
 # @example
 #   include win_tomcat::install
 class win_tomcat::install {
-  # Include main class to use its parameters
-  include win_tomcat
-    package { 'tomcat':
-      ensure          => $win_tomcat::ensure,
-      provider        => chocolatey,
-      install_options => ['--version', "${win_tomcat::version}", '-params', '"', "unzipLocation=${win_tomcat::install_path}", '"'],
-    }
+  package { 'tomcat':
+    ensure          => $win_tomcat::ensure,
+    provider        => chocolatey,
+    install_options => ['--version', "${win_tomcat::version}", '-params', '"', "unzipLocation=${win_tomcat::install_path}", '"'],
+  }
 }
