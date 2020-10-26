@@ -3,7 +3,7 @@
 win_tomcat::version: '9.0.38' #Specify a version in the format 'x.x.xx'. Make sure to set the service name below.
 win_tomcat::ensure: installed # Ensure package is 'installed' or 'uninstalled'
 win_tomcat::service_name: 'Tomcat9' # Set the service name here, i.e. Tomcat7, Tomcat8, Tomcat9 
-win_tomcat::install_path: 'C:\\ProgramData\\%{hiera('win_tomcat::service_name')}'
+win_tomcat::install_path: "C:\\ProgramData\\%{hiera('win_tomcat::service_name')}"
 win_tomcat::sample_app_src: 'https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war' # Source for Sample War file.
 #
 # Default Catalina setting locations and files.
