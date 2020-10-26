@@ -8,9 +8,10 @@
 # @example
 #   include win_tomcat::install
 class win_tomcat::install {
+  
   package { 'tomcat':
     ensure          => $win_tomcat::ensure,
     provider        => chocolatey,
-    install_options => ['--version', "${win_tomcat::version}", '-params', '"', "unzipLocation=${win_tomcat::install_path}", '"'],
+    install_options => ['--version', "${win_tomcat::version}", '-y', '-params', '"', "unzipLocation=${win_tomcat::install_path}", '"'],
   }
 }
