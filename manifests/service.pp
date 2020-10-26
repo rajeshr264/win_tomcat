@@ -9,6 +9,9 @@
 class win_tomcat::service {
   include win_tomcat
   service { $win_tomcat::service_name:
+    ensure     => stopped,
+  } 
+  -> service { $win_tomcat::service_name:
     ensure     => running,
   }
 }
