@@ -10,10 +10,11 @@ class win_tomcat::webapps {
   # Sample Web Application, using Hiera data for param and value
   # Double slashes for Windows path
   
-  archive { "${win_tomcat::catalina_home}\\webapps\\sample.war":
+  archive { "${win_tomcat::install_path}\\webapps\\sample.war":
     ensure => present,
-    source => 'https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war',
+    source => "${win_tomcat::sample_app_src}",
   }
+  
   #class {
   #file { "${win_tomcat::catalina_home}\\webapps\\sample.war":
   #  ensure => file,
