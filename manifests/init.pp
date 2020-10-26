@@ -8,7 +8,7 @@
 #   include win_tomcat
 class win_tomcat (
   $version,
-  $install_path,
+  $catalina_base,
   $ensure,
   $service_name,
   $tcusersxml,
