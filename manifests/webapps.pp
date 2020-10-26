@@ -9,9 +9,10 @@
 class win_tomcat::webapps {
   # Sample Web Application, using Hiera data for param and value
   # Double slashes for Windows path
-  download_file { "Download tomcat sample app" :
-    url                   => 'https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war',
-    destination_directory => '${win_tomcat::catalina_home}\\webapps\\'
+  
+  archive { "${win_tomcat::catalina_home}\\webapps\\sample.war":
+    ensure => present,
+    source => 'https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war',
   }
   #class {
   #file { "${win_tomcat::catalina_home}\\webapps\\sample.war":
