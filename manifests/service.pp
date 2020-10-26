@@ -8,6 +8,7 @@
 #   include win_tomcat::service
 class win_tomcat::service {
   include win_tomcat
+  # start the tomcat service
   service { $win_tomcat::service_name:
     ensure     => running,
   }
