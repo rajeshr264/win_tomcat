@@ -12,6 +12,9 @@ class win_tomcat::install {
   package { 'tomcat':
     ensure          => $win_tomcat::ensure,
     provider        => chocolatey,
-    install_options => ['--version', "${win_tomcat::version}", '-y', '-params', '"', "unzipLocation=${win_tomcat::install_path}", '"'],
+    install_options => ['--version', "${win_tomcat::version}", '-y', '-params', '"', "unzipLocation=${win_tomcat::catalina_base}", '"'],
   }
+  
+  windows_env { "CATALINA_BASE=${win_tomcat::catalina_base}": }
+  windows_env { "CATALINA_HOME=${win_tomcat::catalina_home}": }
 }
