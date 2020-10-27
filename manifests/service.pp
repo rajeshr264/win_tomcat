@@ -10,7 +10,6 @@ class win_tomcat::service {
     
   exec { 'tomcat_start_bat':
      command   => "${win_tomcat::catalina_base}\\bin\\start.bat",
-     user => 'Administrator',
      logoutput => on_failure,
   }
 }
