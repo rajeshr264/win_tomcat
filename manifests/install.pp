@@ -14,9 +14,15 @@ class win_tomcat::install {
     provider        => chocolatey,
   } ->
   package { 'tomcat':
+    ensure          => absent,
+    provider        => chocolatey,
+    install_options => ['--version', "${win_tomcat::version}", '--ignorepackagecodes,', '-y', '-params', '"', "unzipLocation=${win_tomcat::catalina_base}", '"'],
+  }
+  ->
+  package { 'tomcat':
     ensure          => $win_tomcat::ensure,
     provider        => chocolatey,
-    install_options => ['--version', "${win_tomcat::version}", '-y', '-params', '"', "unzipLocation=${win_tomcat::catalina_base}", '"'],
+    install_options => ['--version', "${win_tomcat::version}", '--ignorepackagecodes,' ,'-y', '-params', '"', "unzipLocation=${win_tomcat::catalina_base}", '"'],
   }
  
   windows_env { "CATALINA_BASE=${win_tomcat::catalina_base}": }
