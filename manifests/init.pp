@@ -28,5 +28,5 @@ class win_tomcat (
 
   Class['win_tomcat::install']
   -> Class['win_tomcat::config']
-  ~> Class['win_tomcat::service'] # the ~> "notifies" the service when a change happens.
+  -> Class['win_tomcat::service'] # the ~> "notifies" the service when a change happens.
 }
