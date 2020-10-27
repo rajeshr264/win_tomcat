@@ -12,7 +12,7 @@ class win_tomcat::service {
      command   => "${win_tomcat::catalina_home}\\bin\\startup.bat",
      logoutput => on_failure,
   }
-   service { '${win_tomcat::service_name':
+   service { "${win_tomcat::service_name}":
      ensure   => running,
   }
 }
