@@ -23,9 +23,14 @@ class win_tomcat::install {
   windows_env { "CATALINA_HOME=${win_tomcat::catalina_home}": }
   
   # install the service if it is not running
+  #exec { 'tomcat_service_bat':
+  #   command   => "${win_tomcat::catalina_base}\\bin\\service.bat install",
+  #   onlyif    => "get-service -Name ${win_tomcat::version}|%{if ($_.Status -ne 'Running') {exit 0}}",
+  #   provider  => powershell,
+  #}
+  
   exec { 'tomcat_service_bat':
      command   => "${win_tomcat::catalina_base}\\bin\\service.bat install",
-     onlyif    => "get-service -Name ${win_tomcat::version}|%{if ($_.Status -ne 'Running') {exit 0}}",
      provider  => powershell,
   }
 }
