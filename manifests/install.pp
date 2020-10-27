@@ -13,13 +13,7 @@ class win_tomcat::install {
     ensure          => $win_tomcat::ensure,
     provider        => chocolatey,
   } ->
-  package { 'tomcat_uninstall':
-    ensure          => absent,
-    provider        => chocolatey,
-    install_options => ['--version', "${win_tomcat::version}", '--ignorepackagecodes,', '-y', '-params', '"', "unzipLocation=${win_tomcat::catalina_base}", '"'],
-  }
-  ->
-  package { 'tomcat_install':
+  package { 'tomcat':
     ensure          => $win_tomcat::ensure,
     provider        => chocolatey,
     install_options => ['--version', "${win_tomcat::version}", '--ignorepackagecodes,' ,'-y', '-params', '"', "unzipLocation=${win_tomcat::catalina_base}", '"'],
