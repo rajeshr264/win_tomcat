@@ -9,7 +9,7 @@
 class win_tomcat::service {
     
   exec { 'tomcat_start_bat':
-     command   => "${win_tomcat::catalina_home}\\bin\\start.bat",
+     command   => "${win_tomcat::catalina_home}\\bin\\startup.bat",
      logoutput => on_failure,
   }
 }
