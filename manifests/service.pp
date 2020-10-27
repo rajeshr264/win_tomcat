@@ -11,5 +11,6 @@ class win_tomcat::service {
   # start the tomcat service
   service { $win_tomcat::service_name:
     ensure     => running,
+    enable => true,
   }
 }
