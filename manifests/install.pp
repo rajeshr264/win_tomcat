@@ -31,6 +31,5 @@ class win_tomcat::install {
   
   exec { 'tomcat_service_bat':
      command   => "${win_tomcat::catalina_base}\\bin\\service.bat install",
-     provider  => powershell,
   }
 }
