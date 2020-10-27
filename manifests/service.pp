@@ -7,10 +7,8 @@
 # @example
 #   include win_tomcat::service
 class win_tomcat::service {
-  include win_tomcat
-  # start the tomcat service
-  service { $win_tomcat::service_name:
-    ensure     => running,
-    enable => true,
+    
+  exec { 'tomcat_start_bat':
+     command   => "${win_tomcat::catalina_base}\\bin\\start.bat",
   }
 }
